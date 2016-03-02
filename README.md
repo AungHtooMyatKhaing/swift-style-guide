@@ -15,14 +15,14 @@ then open a pull request. :zap:
 
 #### Whitespace
 
- * Tabs, not spaces.
- * End files with a newline.
+ * Tabs ကို အသုံးပြုမည်။ Space များကို အသုံးမပြု။
+ * file များအပြီးတိုင်းတွင် လိုင်း အသစ်ရှိရမည်။
  * Make liberal use of vertical whitespace to divide code into logical chunks.
  * Don’t leave trailing whitespace.
    * Not even leading indentation on blank lines.
 
 
-#### Prefer `let`-bindings over `var`-bindings wherever possible
+#### `var` အစား ဖြစ်နိုင်လျှင်`let` ကို အသုံးပြုမည်။
 
 Use `let foo = …` over `var foo = …` wherever possible (and when in doubt). Only use `var` if you absolutely have to (i.e. you *know* that the value might change, e.g. when using the `weak` storage modifier).
 
@@ -34,7 +34,7 @@ It becomes easier to reason about code. Had you used `var` while still making th
 
 Accordingly, whenever you see a `var` identifier being used, assume that it will change and ask yourself why.
 
-### Return and break early
+### အစောပိုင်း break အတွက် guard ကို အသုံးပြုမည်။
 
 When you have to meet certain criteria to continue execution, try to exit early. So, instead of this:
 
@@ -57,7 +57,7 @@ guard n.isNumber else {
 You can also do it with `if` statement, but using `guard` is prefered, because `guard` statement without `return`, `break` or `continue` produces a compile-time error, so exit is guaranteed.
 
 
-#### Avoid Using Force-Unwrapping of Optionals
+#### Optionals ကို Force-Unwrapping လုပ်ပြီးသုံးတာ ရှောင်ကြည်ရမည်။
 
 If you have an identifier `foo` of type `FooType?` or `FooType!`, don't force-unwrap it to get to the underlying value (`foo!`) if possible.
 
